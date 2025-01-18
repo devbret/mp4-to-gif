@@ -43,5 +43,3 @@ if __name__ == "__main__":
     logging.info("Starting MP4 to GIF conversion...")
     convert_mp4_to_gif(input_directory, output_directory)
     logging.info("Conversion process completed.")
-
-
