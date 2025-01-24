@@ -22,4 +22,4 @@ Convert MP4 files into GIFs.
 
 ## Please Note
 
-The file size of the GIFs generated using this program are dependent on the size of the original MP4 files. And therefore may be extraordinarily large after processing. Please consider this.
+The file sizes of the GIFs generated using this program are dependent on the file sizes of the original MP4 files. Those GIF files may therefore be extraordinarily large after processing. Please consider this before running the software.
