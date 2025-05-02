@@ -13,7 +13,7 @@ Convert MP4 files into GIFs.
 
 1. Install the above programs.
 2. Open a shell window (for Windows open PowerShell, for MacOS open Terminal and for Linux open your distro's terminal emulator).
-3. Clone this repository using git by running the following command: `git clone https://github.com/devbret/mp4-to-gif`.
+3. Clone this repository using git by running the following command: `git clone git@github.com:devbret/mp4-to-gif.git`.
 4. Navigate to the repo's directory by running: `cd mp4-to-gif`.
 5. Install the needed dependencies for running the script by running: `pip install -r requirements.txt`.
 6. Add paths for your input/MP4 files (on line 40 of the app.py script) and output/GIF files (on line 41 on the app.py script). Also make sure to save the script file after changing the paths.
