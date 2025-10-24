@@ -1,6 +1,16 @@
 # MP4-To-GIF Converter
 
-Convert MP4 files into GIFs.
+Automates the conversion of multiple MP4 video files into high-quality GIFs using the moviepy library.
+
+## Overview
+
+The MP4-To-GIF Converter takes all .mp4 files from a specified input directory, processes each one and saves the converted GIFs into an output directory. The script ensures that both input and output directories are properly handled.
+
+The conversion itself uses ffmpeg for efficiency, matching the GIF frame rate to the source video to preserve visual smoothness while minimizing quality loss.
+
+The program also features a structured logging system to track progress and handle errors. It records every major event, such as when a file starts processing, completes successfully, or fails due to an exception. These logs are written both to the console and a file named conversion.log.
+
+Overall, the program provides a reliable, automated and transparent way to batch-convert MP4 videos into GIF animations, making it useful for content creators, developers and digital artists who need to generate GIFs from video clips efficiently.
 
 ## Set Up
 
