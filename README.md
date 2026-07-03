@@ -2,7 +2,7 @@
 
 Automate batch conversion of `.mp4` video files into `.gif` animations with directory handling and structured logging for progress and errors.
 
-## Overview
+## Application Overview
 
 The MP4-To-GIF Converter takes all `.mp4` files from a specified input directory, processes each one and saves the converted GIFs into an output directory. The script ensures both input and output directories are properly handled. The conversion itself uses `ffmpeg` for efficiency, matching the GIF frame rate to the source video to preserve visual smoothness while minimizing quality loss.
 
@@ -10,7 +10,7 @@ The program also features a structured logging system to track progress and hand
 
 Overall, the program provides a reliable, automated and transparent way to batch-convert MP4 videos into GIF animations, making it useful for content creators, developers and digital artists who need to generate GIFs from video clips efficiently.
 
-## Set Up Instructions
+## Basic Setup Instructions
 
 Below are the required software programs and initial steps for running this application on a Linux machine.
 
@@ -34,15 +34,17 @@ Below are the required software programs and initial steps for running this appl
 
 6. Activate the virtual environment: `source venv/bin/activate`
 
-7. Install the needed dependencies for running the script: `pip install -r requirements.txt`
+7. Install the needed dependencies: `pip install -r requirements.txt`
 
-8. Add paths for your `.mp4` files (on line 40 of the `app.py` script) and `.gif` files (on line 41 on the `app.py` script)
+8. Convert the `.env.template` file into a `.env` file: `cp .env.template .env`
 
-9. Add your `.mp4` files to the designated input directory
+9. Add values for environmental variables to the `.env` file: `nano .env`
 
-10. Run the Python script: `python3 app.py`
+10. Add your `.mp4` files to the designated input directory
 
-11. Open the output directory where your new `.gif` files are located after the script has completed
+11. Run the Python script: `python3 app.py`
+
+12. When finished, exit the virtual environment: `deactivate`
 
 ## Other Considerations
 
