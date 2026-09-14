@@ -48,19 +48,25 @@ def convert_mp4_to_gif(ffmpeg, input_path, output_path, fps, width):
         filters.append(f"scale={width}:-1:flags=lanczos")
     filter_chain = ",".join(filters)
 
-    with tempfile.TemporaryDirectory() as tmp:
-        palette = str(Path(tmp) / "palette.png")
-        run_ffmpeg(ffmpeg, [
-            "-i", str(input_path),
-            "-vf", f"{filter_chain},palettegen",
-            palette
-        ])
-        run_ffmpeg(ffmpeg, [
-            "-i", str(input_path),
-            "-i", palette,
-            "-filter_complex", f"{filter_chain}[x];[x][1:v]paletteuse",
-            str(output_path)
-        ])
+    partial_path = output_path.with_name(f".{output_path.stem}.partial.gif")
+
+    try:
+        with tempfile.TemporaryDirectory() as tmp:
+            palette = str(Path(tmp) / "palette.png")
+            run_ffmpeg(ffmpeg, [
+                "-i", str(input_path),
+                "-vf", f"{filter_chain},palettegen",
+                palette
+            ])
+            run_ffmpeg(ffmpeg, [
+                "-i", str(input_path),
+                "-i", palette,
+                "-filter_complex", f"{filter_chain}[x];[x][1:v]paletteuse",
+                str(partial_path)
+            ])
+        os.replace(partial_path, output_path)
+    finally:
+        partial_path.unlink(missing_ok=True)
 
 
 def main():
