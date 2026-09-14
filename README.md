@@ -60,7 +60,7 @@ This project repo is intended to demonstrate an ability to do the following:
 
 - Create the output directory automatically if it does not already exist
 
-- Find each `.mp4` file in the input directory and convert it into a `.gif` file using `MoviePy` and `FFmpeg`
+- Find each `.mp4` file in the input directory and convert it into a `.gif` file using `FFmpeg`
 
 ### License Information
 
